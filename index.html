@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Diwali!</title>
+  <style>
+    /* Resetting default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e1e2f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .card {
+      width: 350px;
+      padding: 20px;
+      background: #222;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      width: 300%;
+      height: 300%;
+      background: conic-gradient(from 180deg, #ff9a00, #ff1654, #9b5de5, #00f5d4, #ff9a00);
+      animation: rotate 5s linear infinite;
+      top: -100%;
+      left: -100%;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #222;
+      border-radius: 15px;
+      top: 0;
+      left: 0;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #ffeb3b;
+      text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ff1654;
+      animation: glow 1.5s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #ffeb3b, 0 0 10px #ff1654; }
+      to { text-shadow: 0 0 20px #ffeb3b, 0 0 30px #ff1654; }
+    }
+
+    .diya {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, #ff9a00 0%, #ff1654 80%);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      position: relative;
+      margin: 20px 0;
+      animation: flicker 1.5s infinite;
+    }
+
+    .diya::before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 30px;
+      background: radial-gradient(circle, #ffeb3b 0%, #ff1654 60%);
+      border-radius: 50%;
+      animation: glow 1.5s alternate infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #ffeb3b;
+      margin: 15px 0;
+      animation: fadeIn 3s;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Happy Diwali!</h1>
+    <div class="diya"></div>
+    <p>Wishing you a Diwali filled with lights, love, and prosperity!</p>
+  </div>
+</body>
+</html>
